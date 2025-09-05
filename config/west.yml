@@ -11,7 +11,7 @@ manifest:
       revision: main
       import: app/west.yml
     # support nice_oled and nice_epaper
-    - name: zmk-nice-view
+    - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
   self:
