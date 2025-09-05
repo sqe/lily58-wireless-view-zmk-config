@@ -35,7 +35,7 @@
             // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
             // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
             // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
+            // |       |     |     |      |      |      |  EXT_POWER|  |       |      |  _    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
             display-name = "Lower";
@@ -43,7 +43,7 @@
 &kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans          &trans          &trans           &trans    &trans            &trans
 &trans     &trans        &trans        &trans        &trans        &trans                          &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &trans    &trans            &trans
 &trans     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp SEMI  &kp SINGLE_QUOTE  &trans
-&trans     &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans          &none           &none            &none     &none             &kp BSLH
+&trans     &trans        &trans        &trans        &trans        &trans        &ext_power    &ext_power  &trans          &none           &none            &none     &none             &kp BSLH
                                        &trans        &trans        &trans        &trans    &trans  &trans          &trans          &trans
             >;
 
