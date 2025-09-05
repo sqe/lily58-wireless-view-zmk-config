@@ -6,8 +6,9 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -26,7 +27,7 @@
 &kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp EQUAL
 &kp LSHFT  &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 0   &kp RGUI  &kp LALT
+                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp RGUI  &kp LALT
             >;
         };
 
@@ -40,11 +41,11 @@
 
             display-name = "Lower";
             bindings = <
-&kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans          &trans          &trans           &trans    &trans            &trans
-&trans     &trans        &trans        &trans        &trans        &trans                          &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &trans    &trans            &trans
-&trans     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp SEMI  &kp SINGLE_QUOTE  &trans
-&trans     &trans        &trans        &trans        &trans        &trans        &ext_power EP_TOG   &ext_power EP_TOG &trans          &none           &none            &none     &none             &kp BSLH
-                                       &trans        &trans        &trans        &trans    &trans  &trans          &trans          &trans
+&kp GRAVE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                          &trans  &trans          &trans          &trans           &trans            &kp BACKSPACE
+&trans     &trans        &trans        &trans        &trans        &bt BT_CLR                                            &trans  &kp PAGE_DOWN   &kp UP_ARROW    &kp PAGE_UP      &trans            &trans
+&trans     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                                             &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp SINGLE_QUOTE  &trans
+&trans     &trans        &trans        &trans        &trans        &trans        &ext_power EP_TOG    &ext_power EP_TOG  &trans  &none           &none           &none            &none             &kp BSLH
+                                       &trans        &trans        &trans        &trans               &trans             &trans  &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -53,15 +54,25 @@
         raise_layer {
             display-name = "Raise";
             bindings = <
-&kp TILDE  &trans    &trans  &kp C_BRI_DEC  &kp C_BRI_UP  &kp C_REWIND                    &kp C_FAST_FORWARD  &kp K_PLAY_PAUSE  &kp C_VOL_DN     &kp C_VOL_UP  &kp K_MUTE        &trans
-&trans     &trans    &trans  &trans         &trans        &trans                          &kp PAGE_UP         &kp UP_ARROW      &kp PAGE_DOWN    &trans        &trans            &trans
-&trans     &kp EXCL  &kp AT  &kp HASH       &kp DOLLAR    &kp PRCNT                       &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW  &kp SEMI      &kp SINGLE_QUOTE  &trans
-&trans     &trans    &trans  &trans         &trans        &trans        &trans    &trans  &trans              &none             &none            &none         &none             &kp BSLH
+&kp TILDE  &trans    &trans  &kp C_BRI_DEC  &kp C_BRI_UP  &kp C_REWIND                    &kp C_FAST_FORWARD  &kp K_PLAY_PAUSE  &kp C_VOL_DN    &kp C_VOL_UP     &kp K_MUTE  &kp BACKSPACE
+&trans     &trans    &trans  &trans         &trans        &trans                          &trans              &kp PAGE_DOWN     &kp UP_ARROW    &kp PAGE_UP      &trans      &trans
+&trans     &kp EXCL  &kp AT  &kp HASH       &kp DOLLAR    &kp PRCNT                       &trans              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &trans
+&trans     &trans    &trans  &trans         &trans        &trans        &trans    &trans  &trans              &none             &none           &none            &none       &kp BSLH
                              &trans         &trans        &trans        &trans    &trans  &trans              &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             label = "Raise";
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
