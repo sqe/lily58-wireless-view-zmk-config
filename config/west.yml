@@ -5,6 +5,8 @@ manifest:
     # support nice_oled and nice_epaper
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+    - name: gpeye                         
+      url-base: https://github.com/GPeye  
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,5 +16,9 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
+    - name: hammerbeam-slideshow          #new entry
+      remote: gpeye                       #new entry
+      revision: main  
+      
   self:
     path: config
