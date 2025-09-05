@@ -17,4 +17,4 @@ include:
     shield: lily58_left nice_view_adapter nice_epaper
     snippet: studio-rpc-usb-uart
   - board: mikoto@7.2
-    shield: lily58_right nice_view_adapter nice_epaper
+    shield: lily58_right nice_view_adapter nice_view_custom
